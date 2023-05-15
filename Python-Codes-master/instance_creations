@@ -1,0 +1,35 @@
+Linux SERVER:
+*************
+
+import boto3
+ec2 = boto3.resource('ec2')
+
+instances = ec2.create_instances(
+     ImageId='ami-0a85857bfc5345c38',
+	 
+     MinCount=1,
+     MaxCount=1,
+     InstanceType='t2.micro',
+	 SubnetId='subnet-90383be9',
+     KeyName='ha'	 
+ )
+ 
+ 
+ 
+ 
+ Windows Server:
+ ***************
+ import boto3
+ec2 = boto3.resource('ec2')
+
+instances = ec2.create_instances(
+     ImageId='ami-0e3d6af2b48608d1b',
+	 
+     MinCount=1,
+     MaxCount=1,
+     InstanceType='t2.micro',
+	 SubnetId='subnet-90383be9',
+     KeyName='ha'	 
+ )
+ 
+ 

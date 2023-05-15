@@ -1,0 +1,20 @@
+{
+	"Resources": {
+		"hitechVPC": {
+			"Type": "AWS::EC2::VPC",
+			"Properties": {
+				"CidrBlock": "10.1.0.0/24"
+			}
+		},
+
+		"hitechsubnet": {
+			"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"CidrBlock": "10.1.0.0/25",
+				"VpcId": {
+					"Ref": "hitechVPC"
+				}
+			}
+		}
+	}
+}

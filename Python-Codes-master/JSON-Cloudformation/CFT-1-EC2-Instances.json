@@ -1,0 +1,28 @@
+{
+	"Resources": {
+		"Ec2Instance": {
+			"Type": "AWS::EC2::Instance",
+			"Properties": {
+				"ImageId": "ami-0fb30d1ebf455bc20",
+				"InstanceType": "t2.micro",
+				"KeyName": "mohan-acc",
+				"SecurityGroupIds": [{"Ref" : "SecGroup"}],
+				"SubnetId": "subnet-45991923"
+			}
+		},
+		"SecGroup":{
+			"Type" : "AWS::EC2::SecurityGroup",
+			"Properties" : {
+				"GroupDescription" : "Test Sce group",
+				"GroupName" : "My-Sec-Group",
+				"SecurityGroupIngress" : [{
+					"IpProtocol" : "tcp",
+					"FromPort" : 3389,
+					"ToPort" : 3389,
+					"CidrIp" : "0.0.0.0/0"
+				}],
+				"VpcId" : "vpc-1b66bb66"
+			}		
+		}
+	}
+}
